@@ -12,7 +12,12 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
-  config.vm.box = "base"
+  config.vm.box = "docksal_virtual_box.box"
+
+  # To resize box install plugin
+  # > vagrant plugin install vagrant-disksize
+  # and uncomment line bellow. Important: it is possible to increase only.
+  # config.disksize.size = '40GB'
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -32,7 +37,7 @@ Vagrant.configure("2") do |config|
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
-  # config.vm.network "private_network", ip: "192.168.33.10"
+  config.vm.network "private_network", ip: "192.168.33.100"
 
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
@@ -49,14 +54,20 @@ Vagrant.configure("2") do |config|
   # backing providers for Vagrant. These expose provider-specific options.
   # Example for VirtualBox:
   #
-  # config.vm.provider "virtualbox" do |vb|
-  #   # Display the VirtualBox GUI when booting the machine
-  #   vb.gui = true
-  #
-  #   # Customize the amount of memory on the VM:
-  #   vb.memory = "1024"
-  # end
-  #
+  config.vm.provider "virtualbox" do |vb|
+    # Display the VirtualBox GUI when booting the machine
+    # vb.gui = true
+
+    # Customize the amount of memory on the VM:
+    # vb.memory = "4096"
+
+    # Customize the number of CPU on the VM:
+    # vb.cpus = 2
+
+    # VM is modified to have a host CPU execution cap of 50%.
+    # v.customize ["modifyvm", :id, "--cpuexecutioncap", "50"]
+  end
+
   # View the documentation for the provider you are using for more
   # information on available options.
 
