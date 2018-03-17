@@ -13,7 +13,8 @@ Vagrant.configure("2") do |config|
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
   
-  # Load box from local file.
+  # Load box from local file. In case of using local file comment configuation
+  # for loading dvb box from remote host.
   # config.vm.box = "docksal_virtual_box.box"
 
   # Load dvb box from remote host.
