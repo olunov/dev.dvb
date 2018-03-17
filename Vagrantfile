@@ -12,7 +12,17 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
-  config.vm.box = "docksal_virtual_box.box"
+  
+  # Load box from local file.
+  # config.vm.box = "docksal_virtual_box.box"
+
+  # Load dvb box from remote host.
+  config.vm.box = 'docksal-virtual-box'
+  config.vm.box_version = '0.1'
+  config.vm.box_url = 'https://raw.githubusercontent.com/olunov/vb.metadata/master/docksal-virtual-box.metadata.json'
+
+  # Setting hostname.
+  config.vm.hostname = "docksal-xenial64"
 
   # To resize box install plugin
   # > vagrant plugin install vagrant-disksize
@@ -66,6 +76,9 @@ Vagrant.configure("2") do |config|
 
     # VM is modified to have a host CPU execution cap of 50%.
     # v.customize ["modifyvm", :id, "--cpuexecutioncap", "50"]
+
+    # Setting VB name. Define vb name.
+    # vb.name = "docksal_virtual_box_dev"
   end
 
   # View the documentation for the provider you are using for more
