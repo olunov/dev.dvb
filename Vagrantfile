@@ -15,7 +15,7 @@ Vagrant.configure("2") do |config|
   
   # Load box from local file. In case of using local file comment configuation
   # for loading dvb box from remote host.
-  # config.vm.box = "docksal_virtual_box.box"
+  config.vm.box = "docksal_virtual_box.box"
   # You can download box from:
   # - https://drive.google.com/uc?id=1Wq8DQEw6imgnbUSJpHszkcLtCGP2P4lg&export=download
 
