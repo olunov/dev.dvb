@@ -22,8 +22,8 @@ Vagrant.configure("2") do |config|
   # Load dvb box from remote host.
   # config.vm.box = 'docksal-virtual-box'
   config.vm.box_download_checksum_type='sha256'
-  config.vm.box_download_checksum='588f6d0f442af181b35a2d61abe35eb3097d51482255ec854d051acb4db0ccfe'
-  config.vm.box_url = 'https://www.dropbox.com/s/0pgii9uo4z3lnu7/docksal_virtual_box-v0.2.box?dl=1'
+  config.vm.box_download_checksum='b30f005a9910fd0fd5878e119eb0757db344f9a98a0e23470e1da8cdfeafcac9'
+  config.vm.box_url = 'https://www.dropbox.com/s/aradsn0hjd76cja/docksal_virtual_box-v0.2.box?dl=1'
 
   # Setting hostname.
   config.vm.hostname = "docksal-xenial64"
