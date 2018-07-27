@@ -24,4 +24,3 @@ By default it is 192.168.33.100. Use username vagrant and password vagrant to co
 folder:
 \\192.168.33.100\share
 It shares /www folder on virtual machine.
-
